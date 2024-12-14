@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: masters-backend
+    env: node
+    plan: free
+    buildCommand: 'npm install'
+    startCommand: 'node server.js'
+    envVars:
+      - key: SALT_KEY
+        value: e663a1fb-c784-4cc6-9e19-e0161bb6bd27
+      - key: MERCHANT_ID
+        value: M22KR7WW7DEPJ
