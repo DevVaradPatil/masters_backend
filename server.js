@@ -34,7 +34,7 @@ app.post("/payu", async (req, res) => {
         "&center=" +
         req.body.center +
         "&medium=" +
-        req.body.medium,
+        req.body.medium + "&firebaseId=" + req.body.firebaseId,
       callbackUrl: "https://www.mastersgurukulam.com/mts/register",
       redirectMode: "POST",
       mobileNumber: req.body.mobileNumber,
