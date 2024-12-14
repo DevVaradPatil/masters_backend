@@ -88,7 +88,7 @@ app.post("/payu/status", async (req, res) => {
   console.log(checkSum)
   const options = {
     method: "GET",
-    url: `https://api.phonepe.com/apis/hermes/pg/v1/pay/status/${merchantId}/${merchantTransactionId}`,
+    url: `https://api.phonepe.com/apis/hermes/pg/v1/status/${merchantId}/${merchantTransactionId}`,
     headers: {
       accept: "application/json",
       "Content-Type": "application/json",
