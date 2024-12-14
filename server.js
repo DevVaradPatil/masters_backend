@@ -21,7 +21,7 @@ app.post("/payu", async (req, res) => {
   try {
     const data = {
       merchantId: merchantId,
-      merchantTransactionId: req.body.transactionId + Date.now().toString(),
+      merchantTransactionId: req.body.transactionId,
       name: req.body.name,
       amount: 100,
       redirectUrl:
@@ -85,7 +85,7 @@ app.post("/payu/status", async (req, res) => {
     `/pg/v1/status/${merchantId}/${merchantTransactionId}` + SALT_KEY;
   const sha256 = crypto.createHash("sha256").update(string).digest("hex");
   const checkSum = sha256 + "###" + keyIndex;
-
+  console.log(checkSum)
   const options = {
     method: "GET",
     url: `https://api.phonepe.com/apis/hermes/pg/v1/pay/status/${merchantId}/${merchantTransactionId}`,
