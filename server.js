@@ -101,12 +101,14 @@ app.post("/status", async (req, res) => {
     .request(options)
     .then((response) => {
       if (response.data.success) {
-        const url = "http://localhost:5173/exams";
-        return res.redirect(url);
+        res.send(response.data);
+      } else {
+        res.status(400).send(response.data);
       }
     })
     .catch((error) => {
       console.log(error);
+      res.status(500).send({ error: "Internal Server Error" });
     });
 });
 
