@@ -76,7 +76,7 @@ app.post("/payu", async (req, res) => {
   }
 });
 
-app.post("/status", async (req, res) => {
+app.post("/payu/status", async (req, res) => {
   const merchantTransactionId = req.query.id;
   const merchantId = "M22KR7WW7DEPJ";
 
