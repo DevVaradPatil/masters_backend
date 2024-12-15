@@ -23,7 +23,7 @@ app.post("/payu", async (req, res) => {
       merchantId: merchantId,
       merchantTransactionId: req.body.transactionId,
       name: req.body.name,
-      amount: 100,
+      amount: 9900,
       redirectUrl:
         "https://www.mastersgurukulam.com/registration_success?id=" +
         req.body.transactionId +
